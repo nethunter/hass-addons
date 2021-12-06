@@ -1,0 +1,27 @@
+name: CUPS
+version: '0.5'
+slug: cups
+description: Printer server
+url: http://www.cups.org/
+arch:
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+startup: system
+ports:
+  631/tcp: 631
+webui: http://[HOST]:[PORT:631]/admin/
+privileged:
+- SYS_RAWIO
+options:
+  logins:
+    username: homeassistant
+    password:
+schema:
+  logins:
+    username: str
+    password: password
+usb: true
+udev: true
+host_dbus: true
